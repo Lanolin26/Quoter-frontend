@@ -21,15 +21,12 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import QuoteSourceType from 'src/types/QuoteSourceType';
-import QuoteSource from 'src/types/QuoteSource';
-import QuoteIdsInfo from 'src/types/QuoteIdsInfo';
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
-import QuoteUser from 'src/types/QuoteUser';
 import {genNotifyOpts} from 'src/types/common';
 import QCardEmpty from 'components/cards/QCardEmpty.vue';
 import EditQuoteCardComponent from 'components/cards/EditQuoteCardComponent.vue';
+import {QuoteIdsInfo, QuoteSource, QuoteSourceType, QuoteUser} from 'src/types/domain';
 
 interface dataV {
   quote?: QuoteIdsInfo,

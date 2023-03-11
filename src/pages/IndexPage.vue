@@ -1,5 +1,5 @@
 <template>
-  <q-page padding >
+  <q-page padding>
     <q-card-empty v-if="loading"/>
     <div v-else>
       <q-scroll-area style="height: 85vh; max-width: 100vw;">
@@ -30,8 +30,8 @@ import OneQuoteComponent from 'components/cards/OneQuoteComponent.vue';
 import QCardEmpty from 'components/cards/QCardEmpty.vue';
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
-import QuoteInfo from 'src/types/QuoteInfo';
 import {Pageable} from 'src/types/common';
+import {QuoteInfo} from 'src/types/domain';
 
 export default defineComponent({
   name: 'IndexPage',

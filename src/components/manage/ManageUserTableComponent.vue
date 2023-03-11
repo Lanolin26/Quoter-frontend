@@ -50,7 +50,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue';
-import QuoteUser from 'src/types/QuoteUser';
+import {QuoteUser} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageUserTableComponent',

@@ -65,11 +65,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import QuoteSource from 'src/types/QuoteSource';
-import QuoteSourceType from 'src/types/QuoteSourceType';
-import QuoteUser from 'src/types/QuoteUser';
-import QuoteIdsInfo from 'src/types/QuoteIdsInfo';
 import {QForm} from 'quasar';
+import {QuoteIdsInfo, QuoteSource, QuoteSourceType, QuoteUser} from 'src/types/domain';
 
 interface DataV {
   editItem: QuoteIdsInfo

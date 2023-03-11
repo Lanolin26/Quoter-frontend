@@ -70,8 +70,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import QuoteUser, {UserRoles} from 'src/types/QuoteUser';
 import {QForm} from 'quasar';
+import {QuoteUser, UserRoles} from 'src/types/domain';
 
 function createEmptyUser(): QuoteUser {
   return {id: NaN, name: '', login: '', roles: []};

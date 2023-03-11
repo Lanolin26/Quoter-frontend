@@ -33,12 +33,12 @@
 <script lang="ts">
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
-import QuoteSourceType from 'src/types/QuoteSourceType';
 import {defineComponent} from 'vue';
 import {genNotifyOpts, Pageable} from 'src/types/common';
 import ManageSourceTypeTableComponent from 'components/manage/ManageSourceTypeTableComponent.vue';
 import QCardEmpty from 'components/cards/QCardEmpty.vue';
 import EditSourceTypeCardComponent from 'components/cards/EditSourceTypeCardComponent.vue';
+import {QuoteSourceType} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageSourceType',

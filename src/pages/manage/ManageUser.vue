@@ -39,8 +39,8 @@ import EditUserCardComponent from 'components/cards/EditUserCardComponent.vue';
 import {defineComponent} from 'vue';
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
-import QuoteUser from 'src/types/QuoteUser';
 import {genNotifyOpts, Pageable} from 'src/types/common';
+import {QuoteUser} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageUser',

@@ -44,9 +44,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import QuoteSource from 'src/types/QuoteSource';
-import QuoteSourceType from 'src/types/QuoteSourceType';
 import {QForm} from 'quasar';
+import {QuoteSource, QuoteSourceType} from 'src/types/domain';
 
 function createEmptySource(): QuoteSource {
   return {id: NaN, sourceName: '', type: { id: NaN, type: '' }};

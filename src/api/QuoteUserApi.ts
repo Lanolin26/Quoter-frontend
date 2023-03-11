@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {Pageable, PageableEntity} from 'src/types/common';
-import QuoteUser from 'src/types/QuoteUser';
+import {QuoteUser} from 'src/types/domain';
 
 export interface IQuoteUserApi {
   getAll: () => Promise<Array<QuoteUser>>;

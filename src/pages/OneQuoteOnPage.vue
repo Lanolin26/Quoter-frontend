@@ -18,10 +18,10 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import QuoteInfo from 'src/types/QuoteInfo';
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
 import OneQuoteComponent from 'components/cards/OneQuoteComponent.vue';
+import {QuoteInfo} from 'src/types/domain';
 
 interface DataV {
   loading: boolean,

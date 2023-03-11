@@ -37,11 +37,10 @@ import ManageSourceTableComponent from 'components/manage/ManageSourceTableCompo
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
 import QCardEmpty from 'components/cards/QCardEmpty.vue';
-import QuoteSource from 'src/types/QuoteSource';
-import QuoteSourceType from 'src/types/QuoteSourceType';
 import {defineComponent} from 'vue';
 import {genNotifyOpts, Pageable} from 'src/types/common';
 import EditSourceCardComponent from 'components/cards/EditSourceCardComponent.vue';
+import {QuoteSource, QuoteSourceType} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageSource',

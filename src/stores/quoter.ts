@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
-import QuoteIdsInfo from 'src/types/QuoteIdsInfo';
-import QuoteInfo from 'src/types/QuoteInfo';
+import {QuoteIdsInfo, QuoteInfo} from 'src/types/domain';
 
 interface State {
   quotes: QuoteInfo[];

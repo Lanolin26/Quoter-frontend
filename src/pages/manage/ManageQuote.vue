@@ -36,16 +36,12 @@
 <script lang="ts">
 import {genNotifyOpts, Pageable} from 'src/types/common';
 import {defineComponent} from 'vue';
-import QuoteInfo from 'src/types/QuoteInfo';
 import {mapActions} from 'pinia';
 import {usePageStore} from 'stores/pages';
-import QuoteSource from 'src/types/QuoteSource';
-import QuoteSourceType from 'src/types/QuoteSourceType';
-import QuoteUser from 'src/types/QuoteUser';
-import QuoteIdsInfo from 'src/types/QuoteIdsInfo';
 import QCardEmpty from 'components/cards/QCardEmpty.vue';
 import EditQuoteCardComponent from 'components/cards/EditQuoteCardComponent.vue';
 import ManageQuoteTableComponent from 'components/manage/ManageQuoteTableComponent.vue';
+import {QuoteIdsInfo, QuoteInfo, QuoteSource, QuoteSourceType, QuoteUser} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageQuote',

@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue';
-import QuoteInfo from 'src/types/QuoteInfo';
+import {QuoteInfo} from 'src/types/domain';
 
 export default defineComponent({
   name: 'ManageQuoteTableComponent',
