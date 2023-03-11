@@ -1,49 +1,82 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page padding >
+    <q-card-empty v-if="loading"/>
+    <div v-else>
+      <q-scroll-area style="height: 85vh; max-width: 100vw;">
+        <one-quote-component
+          v-for="item in quotes"
+          :key="item.id"
+          :quote="item"
+          is-edit
+        />
+        <q-pagination
+          v-model="page"
+          :max="totalPage"
+          :max-pages="6"
+          boundary-numbers
+          direction-links
+          class="q-pa-lg relative-position vertical-middle flex-center"
+          color="grey"
+          active-color="primary"
+        />
+      </q-scroll-area>
+    </div>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
+import OneQuoteComponent from 'components/cards/OneQuoteComponent.vue';
+import QCardEmpty from 'components/cards/QCardEmpty.vue';
+import {mapActions} from 'pinia';
+import {usePageStore} from 'stores/pages';
+import QuoteInfo from 'src/types/QuoteInfo';
+import {Pageable} from 'src/types/common';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
+  components: {
+    QCardEmpty,
+    OneQuoteComponent
+  },
+  watch: {
+    page() {
+      this.loadElements();
+    }
+  },
   data() {
-    const todos: Todo[] = [
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ];
-    const meta: Meta = {
-      totalCount: 1200
-    };
-    return { todos, meta };
+    return {
+      quotes: new Array<QuoteInfo>(),
+      loading: false,
+      page: 1,
+      totalPage: 1,
+      elementByPage: 10,
+    }
+  },
+  methods: {
+    ...mapActions(usePageStore, ['setTitle']),
+    loadElements() {
+      const paging: Pageable = {
+        size: this.elementByPage,
+        page: this.page - 1
+      };
+      this.loading = true;
+
+      this.$api.quoteInfo
+        .getAllPageable(paging)
+        .then(res => {
+          this.quotes = res.content;
+          this.totalPage = res.totalPages;
+          this.elementByPage = res.numberOfElements;
+          this.page = res.number + 1;
+        })
+        .catch(err => console.log(err))
+        .finally(() => this.loading = false)
+    }
+  },
+  beforeMount() {
+    this.setTitle('Цитатник v2');
+    this.loadElements();
   }
 });
 </script>
