@@ -2,7 +2,6 @@
   <q-page padding>
     <q-card-empty v-if="loading"/>
     <div v-else>
-      <q-scroll-area style="height: 85vh; max-width: 100vw;">
         <one-quote-component
           v-for="item in quotes"
           :key="item.id"
@@ -19,7 +18,6 @@
           color="grey"
           active-color="primary"
         />
-      </q-scroll-area>
     </div>
   </q-page>
 </template>

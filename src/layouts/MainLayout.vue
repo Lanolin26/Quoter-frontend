@@ -79,7 +79,9 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view/>
+      <q-scroll-area style="height: 85vh; max-width: 100vw;">
+        <router-view/>
+      </q-scroll-area>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">

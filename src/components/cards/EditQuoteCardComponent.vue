@@ -142,6 +142,7 @@ export default defineComponent({
         .replace(/\n\s/g, '\n\n')
         .replace(/\r/g, '')
         .replace(/&nbsp;/g, ' ')
+        .replace('\n\n ', '\n\n')
         .replace(String.fromCharCode(160), ' ')
     },
   },
